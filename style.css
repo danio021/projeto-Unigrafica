@@ -1,0 +1,154 @@
+* {
+    font-family: 'Nunito', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f3e4c9;
+}
+
+.meu-cabecalho {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 30px;
+    background-color: #1e1e2f;
+    color: #ffffff;
+    position: relative;
+    margin: 0px 0px 15px 0px;
+}
+
+.logo-titulo h1 {
+    margin: 0;
+    font-size: 1.5rem;
+    white-space: nowrap;
+}
+
+.lado-direito {
+    display: flex;
+    align-items: center;
+    gap: 17px;
+    /* <--- Esse espaçamento impede um botão de subir no outro! */
+}
+
+.campo-pesquisa {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+
+}
+
+/* Tamanho e estrutura do Botão Hambúrguer */
+
+
+.campo-pesquisa input {
+    padding: 8px 12px;
+    border: 1px solid #767776;
+    border-radius: 4px;
+    background-color: #2b2b3d;
+    color: #fff;
+    outline: none;
+}
+
+.campo-pesquisa button {
+    padding: 8px 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.2ss;
+}
+
+.campo-pesquisa button:hover {
+    background-color: #0056b3;
+    transition: 0.3s;
+}
+
+.btn-hambuerguer {
+    width: 35px;
+    height: 35px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 6px 0;
+    box-sizing: border-box;
+}
+
+/* Estilo de cada 'carne' do hambúrguer */
+.btn-hambuerguer .linha {
+    width: 100%;
+    height: 4px;
+    background-color: #c2c1c1;
+    /* Cor do botão */
+    border-radius: 2px;
+    transition: all 0.3s ease;
+    /* Animação suave */
+}
+
+.funcionarios {
+    width: 350px;
+    padding: 2px 2px 2px 2px;
+    border-radius: 3px;
+    background-color: #f3f1ec;
+    color: #043366;
+    margin: 0 0 0 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.funcionarios img {
+    width: 100%;
+    padding: 10px 10px 0px 10px;
+    align-items: center;
+    border-radius: 12px;
+}
+
+.funcionarios p {
+   
+    text-align: center;
+    font-size: 20px;
+    color: #1e1e2f;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin: 10px 0px 10px 0px;
+}
+
+.add-foto {
+    padding: 30px;
+    border: none;
+    border-radius: 14px;
+    color: #101113;
+    background-color: #0056b3;
+}
+
+.botao-flutuante {
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+    z-index: 1000;
+    background-color: #0056b3;
+    color: white;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+    transition: transform 0.2s ease, background-color 0.2s ease;
+
+    text-decoration: none;
+}
+
+.botao-flutuante:hover {
+    background-color: #2396e2;
+    transform: scale(1.08);
+}
