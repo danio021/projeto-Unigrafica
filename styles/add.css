@@ -3,25 +3,36 @@
     margin: 0;
 }
 
+body {
+    font-family: Arial, sans-serif;
+    background-color: #979494cc; 
+    align-items: center;
+    justify-content: center;
+}
+
 div {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #666262;
-    color: #fff;
+    background-color: #f1f1f1;
+    color: #222121;
+    width: 500px;
+    height: 500px;
+    border-radius: 15px;
 }
 
 .funcionarios img {
-    width: 400px;
-    height: 400px;
+    width: 300px;
+    height: 300px;
     border-radius: 10%;
     margin-right: 20px;
 }
 
-.funcionarios p {
-    font-size: 20px;
+.nome {
+    font-size: 30px;
     line-height: 1.5;
     max-width: 400px;
-    
+    padding: 5px;
+    transform: translate(-234px, 230px);
 }
