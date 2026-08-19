@@ -9,6 +9,7 @@ body {
     background-image: url(../imagens/fundo.jpg);
     background-size: cover;
     height: 100vh;
+    width: 100vw;
     display: flex;
     place-items: center;
 }
@@ -18,12 +19,11 @@ div {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
     background-color: transparent;
     color: #222121;
-    width: 500px;
-    height: 650px;
+    
     border-radius: 15px;
+    object-fit: cover;
     /*teste↓*/
     /* Fundo branco translúcido (ajuste o último valor para mais ou menos opacidade) */
     background: rgba(255, 255, 255, 0.05);

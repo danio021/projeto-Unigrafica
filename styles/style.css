@@ -6,7 +6,8 @@
 }
 
 body {
-    background-color: #f3e4c9;
+    background-image: url(../imagens/fundo.jpg);
+    background-size: cover;
 }
 
 .meu-cabecalho {
@@ -92,7 +93,8 @@ body {
 }
 
 .btn-hambuerguer:hover .linha {
-    background-color: #ffffff; /* Cor do botão ao passar o mouse */
+    background-color: #ffffff;
+    /* Cor do botão ao passar o mouse */
     transform: scale(1.1);
 }
 
@@ -114,7 +116,7 @@ body {
 }
 
 .funcionarios p {
-   
+
     text-align: center;
     font-size: 20px;
     color: #1e1e2f;
