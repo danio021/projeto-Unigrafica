@@ -45,18 +45,17 @@ div {
 }
 
 /* Estilo para o botão de escolher foto */
-.container-foto {
+    
+    .container-foto {
       width: 250px;
       height: 250px;
-      border: 2px dashed #ccc;
-      display: flex;
+      border: 2px dashed #0ab2cfd2; 
       align-items: center;
-      justify-content: center;
       position: relative;
       cursor: pointer;
       overflow: hidden;
       border-radius: 8px;
-    margin-bottom: 20px;
+      margin: 20px;
     }
 
     /* O botão personalizado */
@@ -81,7 +80,7 @@ div {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      display: none;
+      display: none; 
     }
     /* Estilo para o botão de escolher foto */
 
