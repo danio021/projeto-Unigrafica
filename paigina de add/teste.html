@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Botão de Foto com Preview</title>
+  <style>
+    .container-foto {
+      width: 250px;
+      height: 250px;
+      border: 2px dashed #ccc;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      cursor: pointer;
+      overflow: hidden;
+      border-radius: 8px;
+    }
+
+    /* O botão personalizado */
+    .botao-upload {
+      background-color: #007bff;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 5px;
+      font-family: sans-serif;
+      font-weight: bold;
+      border: none;
+      pointer-events: none; /* Deixa o clique passar para a div */
+    }
+
+    /* Esconde o input de arquivo real */
+    #inputArquivo {
+      display: none;
+    }
+
+    /* A imagem que vai substituir o botão */
+    #previewImg {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- A caixa que funciona como o botão e depois vira a imagem -->
+  <div class="container-foto" onclick="document.getElementById('inputArquivo').click()">
+    <button class="botao-upload">Escolher Foto</button>
+    <img id="previewImg" src="" alt="Foto selecionada">
+  </div>
+
+  <!-- Input escondido -->
+  <input type="file" id="inputArquivo" accept="image/*" onchange="exibirImagem(event)">
+
+  <script>
+    function exibirImagem(event) {
+      const arquivo = event.target.files[0];
+      const preview = document.getElementById('previewImg');
+      const botao = document.querySelector('.botao-upload');
+
+      if (arquivo) {
+        // Cria uma URL temporária para a imagem
+        preview.src = URL.createObjectURL(arquivo);
+        
+        // Esconde o botão e mostra a imagem
+        botao.style.display = 'none';
+        preview.style.display = 'block';
+      }
+    }
+  </script>
+
+</body>
+</html>

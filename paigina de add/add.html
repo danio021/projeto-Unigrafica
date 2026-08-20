@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="add.css" />
+  </head>
+  <body>
+    <div class="funcionarios">
+      <!--botao para selecionar as fotos-->
+      <div class="container-foto" onclick=" document.getElementById('inputArquivo').click()">
+        <button class="botao-upload" >Escolher Foto</button>
+        <img id="previewImg" src="" alt="Foto selecionada" />
+      </div>
+      <!--input escondido-->
+       <input type="file" id="inputArquivo" accept="image/*" onchange="exibirImagem(event)">
+
+      <input type="name" class="nome" placeholder="nome do funcionario" />
+      <input type="date" class="data" placeholder="data do aniversario" />
+      <button class="botao-salvar" type="button">salvar</button>
+    </div>
+
+    <script src="add.js"></script>
+  </body>
+</html>
