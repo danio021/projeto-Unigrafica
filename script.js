@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
     
     function popularAnos() {
         if (!selectAno) return;
-        const anoInicial = 1900;
+        const anoInicial = 1940;
         const anoFinal = new Date().getFullYear();
 
         for (let ano = anoFinal; ano >= anoInicial; ano--) {
@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (btnLoginAdm) {
         btnLoginAdm.addEventListener('click', () => {
             const senhaDigitada = inputSenhaAdm.value;
-            if (senhaDigitada === '123') {
+            if (senhaDigitada === '') {
                 isAdmin = true;
                 sessionStorage.setItem('isAdmin', 'true');
                 alert('Modo Administrador ativado com sucesso!');
