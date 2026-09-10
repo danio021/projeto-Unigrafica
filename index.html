@@ -1,4 +1,4 @@
-<!Doctype html>
+<!DOCTYPE html>
 <html lang="pt-br">
   <head>
     <meta charset="UTF-8" />
@@ -14,11 +14,11 @@
 
       <div class="lado-direito">
         <div class="campo-pesquisa">
-          <input id="pesquisa" type="text" placeholder="Buscar no site" />
-          <button type="submit">buscar</button>
+          <input id="pesquisa" type="text" placeholder="Buscar por nome ou data..." />
         </div>
 
-        <button class="btn-hambuerguer" aria-label="Abrir menu">
+        <!-- Botão Menu / ADM -->
+        <button class="btn-hambuerguer" id="btnAbrirAdmModal" aria-label="Abrir menu">
           <span class="linha"></span>
           <span class="linha"></span>
           <span class="linha"></span>
@@ -26,12 +26,56 @@
       </div>
     </header>
 
-    <div class="funcionarios">
-      <img src="imagens/tanjiro.jpg" alt="funcionario" />
-      <p>nome <br> (dia/mes/ano)</p>
+    <!-- Painel de Login ADM Escondido -->
+    <div id="modalAdm" style="display: none; position: fixed; top: 70px; right: 30px; background: rgba(43, 43, 61, 0.95); padding: 15px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.2); z-index: 2000; box-shadow: 0 4px 12px rgba(0,0,0,0.5);">
+      <p style="color: white; font-size: 14px; margin-bottom: 8px;" id="textoStatusModal">Modo ADM: Desligado</p>
+      
+      <div id="areaLoginAdm" style="display: flex; flex-direction: column; gap: 8px;">
+        <input type="password" id="inputSenhaAdm" placeholder="Senha do ADM" style="padding: 6px; border-radius: 4px; border: 1px solid #767776; background: #2b2b3d; color: white; outline: none;">
+        <button id="btnLoginAdm" style="padding: 6px; background: #007bff; color: white; border: none; border-radius: 4px; cursor: pointer;">Entrar</button>
+      </div>
+
+      <button id="btnSairAdm" style="display: none; width: 100%; padding: 6px; background: #d9534f; color: white; border: none; border-radius: 4px; cursor: pointer; margin-top: 5px;">Sair do Modo ADM</button>
     </div>
 
-    <a href="/paginaAdd/add.html" class="botao-flutuante"> + </a>
+    <!-- Barra de Filtros e Ordenação -->
+    <div class="barra-filtros">
+      <select id="filtroAno">
+        <option value="">Todos os Anos</option>
+      </select>
+
+      <select id="filtroMes">
+        <option value="">Todos os Meses</option>
+        <option value="01">Janeiro</option>
+        <option value="02">Fevereiro</option>
+        <option value="03">Março</option>
+        <option value="04">Abril</option>
+        <option value="05">Maio</option>
+        <option value="06">Junho</option>
+        <option value="07">Julho</option>
+        <option value="08">Agosto</option>
+        <option value="09">Setembro</option>
+        <option value="10">Outubro</option>
+        <option value="11">Novembro</option>
+        <option value="12">Dezembro</option>
+      </select>
+
+      <select id="ordenacao">
+        <option value="data-recente">Mais Recentes / Próximos</option>
+        <option value="data-antiga">Mais Antigos</option>
+        <option value="alfabetica">Ordem Alfabética (A-Z)</option>
+      </select>
+
+      <button id="btnLimparFiltros">Limpar Filtros</button>
+    </div>
+
+    <!-- Onde os funcionários cadastrados vão aparecer -->
+    <div class="container-cards" id="listaFuncionarios">
+      <!-- O JavaScript vai injetar os cards aqui -->
+    </div>
+
+    <!-- Botão de Adicionar (Aparece só para ADM) -->
+    <a href="paginaAdd/add.html" class="botao-flutuante" id="btnFlutuanteAdd" style="display: none;"> + </a>
 
     <script src="script.js"></script>
   </body>

@@ -1,161 +1,221 @@
 * {
-    font-family: 'Nunito', sans-serif;
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    font-family: Arial, sans-serif;
 }
 
+/* Fundo geral da página em tom cinza/bege suave */
 body {
-    background-image: url(../imagens/fundo.jpg);
-    background-size: cover;
+    background-color: #eef0ec; 
+    color: #333;
+    padding-bottom: 80px;
 }
 
+/* Cabeçalho original em tom elegante */
 .meu-cabecalho {
     display: flex;
-    align-items: center;
     justify-content: space-between;
+    align-items: center;
+    background-color: #2b2b3d; /* Mantém o cabeçalho original sofisticado */
     padding: 15px 30px;
-    background-color: #1e1e2f;
-    color: #ffffff;
-    position: relative;
-    margin: 0px 0px 15px 0px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
 .logo-titulo h1 {
-    margin: 0;
-    font-size: 1.5rem;
-    white-space: nowrap;
+    font-size: 22px;
+    color: #fff;
 }
 
 .lado-direito {
     display: flex;
     align-items: center;
-    gap: 17px;
-    /* <--- Esse espaçamento impede um botão de subir no outro! */
+    gap: 15px;
 }
-
-.campo-pesquisa {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-
-}
-
-/* Tamanho e estrutura do Botão Hambúrguer */
-
 
 .campo-pesquisa input {
-    padding: 8px 12px;
-    border: 1px solid #767776;
-    border-radius: 4px;
-    background-color: #2b2b3d;
-    color: #fff;
-    outline: none;
-}
-
-.campo-pesquisa button {
-    padding: 8px 16px;
-    background-color: #007bff;
+    padding: 9px 14px;
+    border-radius: 6px;
+    border: 1px solid #555;
+    background: #3b3b4f;
     color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background 0.2s;
+    font-size: 14px;
+    outline: none;
+    width: 220px;
+    transition: width 0.3s ease;
 }
 
-.campo-pesquisa button:hover {
-    background-color: #0056b3;
-    transition: 0.3s;
+.campo-pesquisa input::placeholder {
+    color: #aaa;
+}
+
+.campo-pesquisa input:focus {
+    width: 260px;
 }
 
 .btn-hambuerguer {
-    width: 35px;
-    height: 35px;
-    background: transparent;
-    border: none;
+    background: #3b3b4f;
+    border: 1px solid #555;
+    border-radius: 6px;
+    padding: 8px;
     cursor: pointer;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: 6px 0;
-    box-sizing: border-box;
+    width: 38px;
+    height: 38px;
 }
 
-/* Estilo de cada 'carne' do hambúrguer */
 .btn-hambuerguer .linha {
+    display: block;
+    height: 3px;
     width: 100%;
-    height: 4px;
-    background-color: #c2c1c1;
-    /* Cor do botão */
+    background-color: white;
     border-radius: 2px;
-    transition: all 0.3s ease;
-    /* Animação suave */
 }
 
-.btn-hambuerguer:hover .linha {
-    background-color: #ffffff;
-    /* Cor do botão ao passar o mouse */
-    transform: scale(1.1);
+.barra-filtros {
+    display: flex;
+    gap: 12px;
+    padding: 0 30px;
+    margin: 20px 0;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.barra-filtros select, 
+.barra-filtros button {
+    padding: 10px 14px;
+    border-radius: 6px;
+    background: #dfded9; /* Tom bege/cinza suave para os filtros */
+    color: #333;
+    border: 1px solid #b5b5ad;
+    font-size: 14px;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.barra-filtros button {
+    background: #d9534f;
+    color: white;
+    border: none;
+    font-weight: bold;
+}
+
+.container-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 0 30px;
+    justify-content: flex-start;
 }
 
 .funcionarios {
-    width: 350px;
-    padding: 2px 2px 2px 2px;
-    border-radius: 3px;
-    background-color: #f3f1ec;
-    color: #043366;
-    margin: 0 0 0 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background: #fbfaf7; /* Fundo do card em tom bege claro/creme */
+    border-radius: 12px;
+    overflow: hidden;
+    width: 230px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    border: 1px solid #dcdad2;
+    display: flex;
+    flex-direction: column;
 }
 
 .funcionarios img {
     width: 100%;
-    padding: 10px 10px 0px 10px;
-    align-items: center;
-    border-radius: 12px;
+    height: 230px;
+    object-fit: cover;
+    display: block;
+    background-color: #e5e3db;
 }
 
 .funcionarios p {
-
-    text-align: center;
-    font-size: 20px;
-    color: #1e1e2f;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    margin: 10px 0px 10px 0px;
+    padding: 10px 15px;
+    font-size: 14px;
+    color: #555;
 }
 
-.add-foto {
-    padding: 30px;
+.funcionarios p strong {
+    font-size: 16px;
+    color: #222;
+}
+
+.btn-deletar {
+    width: 100%;
+    padding: 8px;
+    background: #d9534f;
+    color: white;
     border: none;
-    border-radius: 14px;
-    color: #101113;
-    background-color: #0056b3;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
 }
 
 .botao-flutuante {
     position: fixed;
-    bottom: 50px;
-    right: 50px;
-    z-index: 1000;
-    background-color: #0056b3;
+    bottom: 25px;
+    right: 25px;
+    width: 65px;
+    height: 65px;
+    background-color: #007bff;
     color: white;
-    width: 56px;
-    height: 56px;
     border-radius: 50%;
-    border: none;
-    cursor: pointer;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
-    transition: transform 0.2s ease, background-color 0.2s ease;
-
+    font-size: 32px;
     text-decoration: none;
+    box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);
+    z-index: 999;
+    transition: transform 0.2s ease;
 }
 
-.botao-flutuante:hover {
-    background-color: #2396e2;
-    transform: scale(1.08);
+.botao-flutuante:active {
+    transform: scale(0.90);
+}
+
+/* ==========================================
+   ADAPTAÇÃO AUTOMÁTICA PARA CELULARES
+   ================================---------- */
+@media (max-width: 768px) {
+    .meu-cabecalho {
+        padding: 12px 15px;
+    }
+
+    .logo-titulo h1 {
+        font-size: 18px;
+    }
+
+    .campo-pesquisa input {
+        width: 140px;
+    }
+
+    .campo-pesquisa input:focus {
+        width: 170px;
+    }
+
+    .barra-filtros {
+        padding: 0 15px;
+        gap: 8px;
+    }
+
+    .barra-filtros select, 
+    .barra-filtros button {
+        flex: 1;
+        min-width: 45%;
+    }
+
+    .container-cards {
+        padding: 0 15px;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .funcionarios {
+        width: 100%;
+        max-width: 280px;
+    }
 }

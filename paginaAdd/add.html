@@ -8,19 +8,22 @@
   </head>
   <body>
     <div class="funcionarios">
-      <!--botao para selecionar as fotos-->
-      <div class="container-foto" onclick=" document.getElementById('inputArquivo').click()">
-        <button class="botao-upload" >Escolher Foto</button>
-        <img id="previewImg" src="" alt="Foto selecionada" />
-      </div>
-      <!--input escondido-->
-       <input type="file" id="inputArquivo" accept="image/*" onchange="exibirImagem(event)">
+  <!-- Adicionado o ID aqui na div -->
+  <div class="container-foto" id="divContainerFoto">
+    <button class="botao-upload">Escolher Foto</button>
+    <img id="previewImg" src="" alt="Foto selecionada" />
+  </div>
+  
+  <!--input escondido (removi o onchange daqui para usar apenas o JS limpo) -->
+  <input type="file" id="inputArquivo" accept="image/*">
 
-      <input type="name" class="nome" placeholder="nome do funcionario" />
-      <input type="date" class="data" placeholder="data do aniversario" />
-      <button class="botao-salvar" type="button">salvar</button>
-    </div>
-
+  <input type="text" class="nome" placeholder="nome do funcionario" />
+  <input type="date" class="data" placeholder="data do aniversario" />
+  <button class="botao-salvar" type="button">salvar</button>
+</div>
+    <button class="btn-voltar" onclick="history.back()">
+    &larr; Voltar
+</button>
     <script src="add.js"></script>
   </body>
 </html>
