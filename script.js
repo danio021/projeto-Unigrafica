@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
     
     function popularAnos() {
         if (!selectAno) return;
-        const anoInicial = 1940;
+        const anoInicial = 1926;
         const anoFinal = new Date().getFullYear();
 
         for (let ano = anoFinal; ano >= anoInicial; ano--) {
